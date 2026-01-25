@@ -1,0 +1,30 @@
+lobby:
+    world: world_lobby
+    x: -0.5
+    y: 90.0
+    z: -0.5
+    yaw: -0.029161658
+    pitch: 0.15571366
+
+spawn:
+    world: world_lobby
+    x: -0.5
+    y: 90.0
+    z: -0.5
+    yaw: -0.6054186
+    pitch: -0.21099684
+
+playerhider:
+    ded30a53-ec16-4f61-af5a-1bb9fb2a583f: 0
+
+servers:
+    server1: ffa
+    server2: duels
+
+build:
+    ded30a53-ec16-4f61-af5a-1bb9fb2a583f: false
+
+links:
+    website: 'https://example.com'
+    discord: 'https://discord.gg/example'
+    store: 'https://store.example.com'

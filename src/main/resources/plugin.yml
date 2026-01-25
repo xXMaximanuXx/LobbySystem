@@ -1,0 +1,32 @@
+name: LobbySystem
+version: '1.0-SNAPSHOT'
+description: Ein einfaches Lobby System für deinen Server
+author: M4xi2312
+main: de.maximanu.lobbySystem.LobbySystem
+api-version: '1.21'
+commands:
+  spawn:
+    description: Teleport to spawn
+    usage: /spawn
+  setspawn:
+    description: Set spawn at your position
+    usage: /setspawn
+    permission: lobbysystem.set
+  build:
+    description: Toggle build mode in the lobby
+    usage: /build
+    permission: lobbysystem.build
+  lobbysystem:
+    description: LobbySystem admin commands
+    usage: /lobbysystem reload
+    permission: lobbysystem.reload
+permissions:
+  lobbysystem.set:
+    description: Allows setting spawn
+    default: op
+  lobbysystem.build:
+    description: Allows toggling build mode
+    default: op
+  lobbysystem.reload:
+    description: Allows reloading the plugin config
+    default: op
