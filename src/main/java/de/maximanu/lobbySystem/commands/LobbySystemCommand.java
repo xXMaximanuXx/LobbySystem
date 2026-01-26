@@ -18,7 +18,7 @@ public class LobbySystemCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (args.length == 0) {
-            sender.sendMessage("Usage: /lobbysystem reload");
+            sender.sendMessage(plugin.getMessageService().get("usage.lobbysystem", "Usage: /lobbysystem reload"));
             return true;
         }
 
@@ -26,20 +26,20 @@ public class LobbySystemCommand implements CommandExecutor {
             if (sender instanceof Player) {
                 Player p = (Player) sender;
                 if (!p.isOp() && !p.hasPermission("lobbysystem.reload")) {
-                    p.sendMessage("§cYou don't have permission to reload the config.");
+                    p.sendMessage(plugin.getMessageService().get("errors.no-permission.reload", "&cYou don't have permission to reload the config."));
                     return true;
                 }
             } else if (sender instanceof ConsoleCommandSender) {
                 // console allowed
             }
 
-            plugin.reloadConfig();
-            plugin.saveDefaultConfig(); // ensure defaults exist
-            sender.sendMessage("§aConfig reloaded.");
+            plugin.reloadPluginConfig();
+            plugin.getPlayerListener().refreshAllPlayers();
+            sender.sendMessage(plugin.getMessageService().get("info.config-reloaded", "&aConfig reloaded."));
             return true;
         }
 
-        sender.sendMessage("Usage: /lobbysystem reload");
+        sender.sendMessage(plugin.getMessageService().get("usage.lobbysystem", "Usage: /lobbysystem reload"));
         return true;
     }
 }

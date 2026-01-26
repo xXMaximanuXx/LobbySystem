@@ -1,11 +1,3 @@
-lobby:
-    world: world_lobby
-    x: -0.5
-    y: 90.0
-    z: -0.5
-    yaw: -0.029161658
-    pitch: 0.15571366
-
 spawn:
     world: world_lobby
     x: -0.5
@@ -14,15 +6,60 @@ spawn:
     yaw: -0.6054186
     pitch: -0.21099684
 
-playerhider:
-    ded30a53-ec16-4f61-af5a-1bb9fb2a583f: 0
+lobby:
+    world: ""
+    teleport-on-join: true
+    teleport-on-respawn: true
+    teleport-on-void: true
+    protect:
+        apply-to-all-worlds: true
+        damage: true
+        hunger: true
+        block-break: true
+        block-place: true
+        interact: true
+        entity-interact: true
+        inventory: true
+        item-drop: true
+
+hotbar:
+    enabled: true
+    apply-to-all-worlds: false
+    lock: true
+    info:
+        slot: 0
+        material: BOOK
+    selector:
+        slot: 4
+        material: NETHER_STAR
+    hider:
+        slot: 8
+        material: PLAYER_HEAD
+
+menu:
+    selector:
+        size: 27
+        layout-slots: [10, 12, 14, 16]
+        prev-slot: 18
+        next-slot: 26
+        fill-empty: true
+        filler-material: GRAY_STAINED_GLASS_PANE
 
 servers:
-    server1: ffa
-    server2: duels
-
-build:
-    ded30a53-ec16-4f61-af5a-1bb9fb2a583f: false
+    server1:
+        name: "<#FFCC66>FFA"
+        bungee: "ffa"
+        item: "BOW"
+        slot: 11
+        lore:
+            - "<#8A8A8A>• <#D6D6D6>Click to connect"
+    server2:
+        name: "<#FFCC66>Duels"
+        bungee: "duels"
+        item: "DIAMOND_SWORD"
+        slot: 15
+        lore:
+            - "<#8A8A8A>• <#D6D6D6>Click to connect"
 
 links:
     website: 'https://example.com'

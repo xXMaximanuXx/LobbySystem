@@ -19,18 +19,21 @@ public class BuildCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage("§cOnly players can use this command.");
+            sender.sendMessage(plugin.getMessageService().get("errors.only-players", "&cOnly players can use this command."));
             return true;
         }
         Player player = (Player) sender;
         if (!player.isOp() && !player.hasPermission("lobbysystem.build")) {
-            player.sendMessage("§cYou don't have permission to toggle build mode.");
+            player.sendMessage(plugin.getMessageService().get("errors.no-permission.build", "&cYou don't have permission to toggle build mode."));
             return true;
         }
         UUID id = player.getUniqueId();
-        boolean now = !plugin.getBuildMode(id);
-        plugin.setBuildMode(id, now);
-        player.sendMessage(now ? "§aBuild mode enabled." : "§cBuild mode disabled.");
+        boolean now = !plugin.getPlayerStateService().getBuildMode(id);
+        plugin.getPlayerStateService().setBuildMode(id, now);
+        String msg = now
+                ? plugin.getMessageService().get("info.build-enabled", "&aBuild mode enabled.")
+                : plugin.getMessageService().get("info.build-disabled", "&cBuild mode disabled.");
+        player.sendMessage(msg);
         return true;
     }
 }

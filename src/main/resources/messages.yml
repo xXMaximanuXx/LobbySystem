@@ -1,0 +1,66 @@
+usage:
+  lobbysystem: "<#8A8A8A>» <#D6D6D6>Usage: <#FFFFFF>/lobbysystem reload"
+
+errors:
+  only-players: "<#FF5C5C>⛔ <#D6D6D6>Only players can use this command."
+  no-permission:
+    build: "<#FF5C5C>⛔ <#D6D6D6>You don't have permission to toggle build mode."
+    setspawn: "<#FF5C5C>⛔ <#D6D6D6>You don't have permission to set spawn."
+    reload: "<#FF5C5C>⛔ <#D6D6D6>You don't have permission to reload the config."
+  spawn-not-set: "<#FF5C5C>⚠ <#D6D6D6>Spawn is not set."
+  spawn-not-set-op: "<#FF5C5C>⚠ <#D6D6D6>Spawn is not set. <#FFFFFF>Use /setspawn."
+
+info:
+  spawn-set: "<#7DFF9C>✔ <#D6D6D6>Spawn set."
+  spawn-teleport: "<#7DFF9C>✔ <#D6D6D6>Teleported to spawn."
+  build-enabled: "<#7DFF9C>✔ <#D6D6D6>Build mode enabled."
+  build-disabled: "<#FF5C5C>✖ <#D6D6D6>Build mode disabled."
+  config-reloaded: "<#7DFF9C>✔ <#D6D6D6>Config reloaded."
+  visibility:
+    all: "<#7FB8FF>👁 <#D6D6D6>Players: <#FFFFFF>Visible"
+    ops: "<#7FB8FF>👁 <#D6D6D6>Players: <#FFFFFF>Only Staff"
+    hidden: "<#7FB8FF>👁 <#D6D6D6>Players: <#FFFFFF>Hidden"
+
+links:
+  website: "<#7FB8FF>🌐 <#D6D6D6>Website: <#FFFFFF>{link}"
+  discord: "<#7FB8FF>💬 <#D6D6D6>Discord: <#FFFFFF>{link}"
+  store: "<#FFCC66>🛒 <#D6D6D6>Store: <#FFFFFF>{link}"
+
+hotbar:
+  info:
+    name: "<#D6D6D6>ꜱᴇʀᴠᴇʀ ɪɴꜰᴏ"
+    lore:
+      - "<#8A8A8A>• <#D6D6D6>Right click"
+  selector:
+    name: "<#FFCC66>ꜱᴇʀᴠᴇʀ ꜱᴇʟᴇᴄᴛᴏʀ"
+    lore:
+      - "<#8A8A8A>• <#D6D6D6>Choose a server"
+  hider:
+    prefix: "<#FF5C5C>ᴘʟᴀʏᴇʀ ʜɪᴅᴇʀ"
+    name:
+      shown: "<#FF5C5C>ᴘʟᴀʏᴇʀ ʜɪᴅᴇʀ <#D6D6D6>(Shown)"
+      ops: "<#FF5C5C>ᴘʟᴀʏᴇʀ ʜɪᴅᴇʀ <#D6D6D6>(Only Staff)"
+      hidden: "<#FF5C5C>ᴘʟᴀʏᴇʀ ʜɪᴅᴇʀ <#D6D6D6>(Hidden)"
+    lore:
+      shown:
+        - "<#8A8A8A>• <#D6D6D6>Hide players"
+      ops:
+        - "<#8A8A8A>• <#D6D6D6>Show staff only"
+      hidden:
+        - "<#8A8A8A>• <#D6D6D6>Show players"
+
+menu:
+  selector:
+    title: "<#FFCC66>ꜱᴇʀᴠᴇʀ ꜱᴇʟᴇᴄᴛᴏʀ"
+    prev-page: "<#8A8A8A>◀ <#D6D6D6>Previous"
+    next-page: "<#D6D6D6>Next <#8A8A8A>▶"
+    page-lore:
+      - "<#8A8A8A>• <#D6D6D6>Page <#FFFFFF>{page}<#D6D6D6>/<#FFFFFF>{pages}"
+    filler-name: "<#2B2B2B>·"
+    no-servers:
+      name: "<#FF5C5C>⚠ <#D6D6D6>No servers configured"
+      lore:
+        - "<#8A8A8A>• <#D6D6D6>Add servers in config.yml"
+    item:
+      default-lore:
+        - "<#8A8A8A>• <#D6D6D6>Click to connect"

@@ -18,17 +18,17 @@ public class SpawnCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage("§cOnly players can use this command.");
+            sender.sendMessage(plugin.getMessageService().get("errors.only-players", "&cOnly players can use this command."));
             return true;
         }
         Player player = (Player) sender;
-        Location spawn = plugin.getSpawnLocation();
+        Location spawn = plugin.getSpawnService().getSpawnLocation();
         if (spawn == null) {
-            player.sendMessage("§cSpawn is not set.");
+            player.sendMessage(plugin.getMessageService().get("errors.spawn-not-set", "&cSpawn is not set."));
             return true;
         }
         player.teleport(spawn);
-        player.sendMessage("§aYou have been teleported to the spawn point.");
+        player.sendMessage(plugin.getMessageService().get("info.spawn-teleport", "&aYou have been teleported to the spawn point."));
         return true;
     }
 }

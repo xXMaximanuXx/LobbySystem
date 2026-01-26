@@ -17,16 +17,16 @@ public class SetSpawnCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage("Nur Spieler können diesen Befehl nutzen.");
+            sender.sendMessage(plugin.getMessageService().get("errors.only-players", "&cOnly players can use this command."));
             return true;
         }
         Player player = (Player) sender;
         if (!player.isOp() && !player.hasPermission("lobbysystem.set")) {
-            player.sendMessage("§cYou don't have permission to set spawn.");
+            player.sendMessage(plugin.getMessageService().get("errors.no-permission.setspawn", "&cYou don't have permission to set spawn."));
             return true;
         }
-        plugin.saveSpawnLocation(player.getLocation());
-        player.sendMessage("§aSpawn set.");
+        plugin.getSpawnService().saveSpawnLocation(player.getLocation());
+        player.sendMessage(plugin.getMessageService().get("info.spawn-set", "&aSpawn set."));
         return true;
     }
 }
